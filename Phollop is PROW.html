@@ -11,8 +11,9 @@
 </style>
        
 <title> Yoda Music </title>
-
-<h1> Yoda Seagulls Music </h1>
+<div id="rotateE">
+    <h1> Yoda Seagulls Music </h1>
+</div>
 
 <img src="https://media.giphy.com/media/11ocEaLDZafNHa/giphy.gif">
 
@@ -22,5 +23,19 @@
     audio.src = "Sang.mp3";
     audio.loop = true;
     audio.play();
+    
+    var rotateE = document.getElementById('rotateE);
+    var angle = 0;
+    function update(){
+        angle++;
+        if(angle > 360){
+            angle = 0;
+        }
+        
+        var word = "transform: rotate(" +angle+ "deg);";
+        rotateE.style = word;
+        
+        requestAnimationFrame(update);
+    }
 
 </script>
